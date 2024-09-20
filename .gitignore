@@ -1,0 +1,49 @@
+# Ignorar archivos generados por el sistema operativo
+/.DS_Store
+Thumbs.db
+
+# Ignorar archivos de configuración locales
+.env
+.env.*
+
+# Ignorar archivos de caché y logs
+tmp/
+logs/
+
+# Ignorar archivos de build
+build/
+dist/
+
+# Ignorar archivos de depuración
+*.log
+npm-debug.log*
+
+# Ignorar archivos de IDE
+.idea
+*.iml
+*.suo
+*.sln
+.vscode/
+
+# Ignorar módulos de Node.js
+node_modules/
+
+# Ignorar archivos de caché de npm
+.npm
+.npmrc
+
+# Ignorar archivos de caché de yarn
+.yarn
+yarn-error.log*
+
+# Ignorar archivos de configuración de linters
+.eslintcache
+
+# Ignorar archivos de documentación generada
+docs/
+
+# Ignorar archivos de prueba
+coverage/
+
+# Ignorar archivos temporales de edición
+*.swp
