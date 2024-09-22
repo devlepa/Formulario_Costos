@@ -2,157 +2,184 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="multimedia/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="stylesheet" href="style.css">
-    <title>React App</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>INNGO</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div class="tagline">
+      <span>Producción, entretenimiento y promoción de eventos artísticos</span>
+    </div>
     <header class="header">
-      <div class="logo-section">
-          <img src="logo.svg" alt="Inngo Logo">
-          <span>MARKETING CULTURAL</span>
-      </div>
       <div class="nav-section">
-          <div class="social-links">
-              <a href="https://www.facebook.com/inngo.com.co?mibextid=LQQJ4d" target="_blank" title="Facebook"><img src="facebook.svg" alt="Facebook"></a>
-              <a href="https://www.tiktok.com/@inngomarketing" target="_blank" title="TikTok"><img src="tiktok.svg" alt="TikTok"></a>
-              <a href="https://www.instagram.com/inngo.co/" target="_blank" title="Instagram"><img src="instagram.svg" alt="Instagram"></a>
-              <a href="https://www.youtube.com/@INNGO" target="_blank" title="YouTube"><img src="youtube.svg" alt="YouTube"></a>
-          </div>
-          <nav>
-              <a href="#">Tienda</a>
-              <a href="#">Servicios</a>
-              <a href="#">Nosotros</a>
-              <a href="#">Multimedia</a>
-          </nav>
-          <div class="cart">
-              <img src="cart.svg" alt="Cart">
-              <span>$0</span>
-          </div>
-      </div>
-      <div class="tagline">
-          <span>Producción, entretenimiento y promoción de eventos artísticos</span>
+        <div class="logo">
+          <img id="logo" src="multimedia/logo.png" alt="Inngo Logo" />
+        </div>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/inngo.com.co?mibextid=LQQJ4d"
+            target="_blank"
+            title="Facebook"
+            ><img src="multimedia/facebook.png" alt="Facebook"
+          /></a>
+          <a
+            href="https://www.tiktok.com/@inngomarketing"
+            target="_blank"
+            title="TikTok"
+            ><img src="multimedia/tiktok.png" alt="TikTok"
+          /></a>
+          <a
+            href="https://www.instagram.com/inngo.co/"
+            target="_blank"
+            title="Instagram"
+            ><img src="multimedia/instagram.png" alt="Instagram"
+          /></a>
+          <a
+            href="https://www.youtube.com/@INNGO"
+            target="_blank"
+            title="YouTube"
+            ><img src="multimedia/youtube.png" alt="YouTube"
+          /></a>
+        </div>
+        <nav>
+          <a href="#">Tienda</a>
+          <a href="#">Servicios</a>
+          <a href="#">Nosotros</a>
+          <a href="#">Multimedia</a>
+        </nav>
+        <div class="cart">
+          <img src="multimedia/car.png" alt="Cart" />
+          <span>$0</span>
+        </div>
       </div>
     </header>
-    <main class="container mx-auto py-8">
-      <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold">Experiencias INNGO</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="border rounded-lg p-4 text-center">
-              <img src="/placeholder.svg" alt="Kit Cata de Café" class="mx-auto mb-4" width="150" height="150" style="aspect-ratio:150/150;object-fit:cover" />
-              <h3 class="text-xl font-semibold">Kit Cata de Café</h3>
-          </div>
-          <div class="border rounded-lg p-4 text-center">
-              <img src="/placeholder.svg" alt="Kit Cata de Vino" class="mx-auto mb-4" width="150" height="150" style="aspect-ratio:150/150;object-fit:cover" />
-              <h3 class="text-xl font-semibold">Kit Cata de Vino</h3>
-          </div>
-          <div class="border rounded-lg p-4 text-center">
-              <img src="/placeholder.svg" alt="Kit Cata de Cerveza" class="mx-auto mb-4" width="150" height="150" style="aspect-ratio:150/150;object-fit:cover" />
-              <h3 class="text-xl font-semibold">Kit Cata de Cerveza</h3>
-          </div>
-      </div>
-              
-    </main>
+
     <section class="container">
-      <h2>Event Quote Form</h2>
-      <form id="quoteForm" class="form">
-          <!-- Contact Information -->
-          <div class="field">
-              <label for="name">Your Name:</label>
-              <input type="text" id="name" name="name" required>
+      
+      <h2 id="tittle">Calculo Costo Evento</h2>
+      
+      <form action="/submit" method="post">
+        <p class="separador"></p>
+
+        <div class="field">
+          <label for="cantidadEquipo" class="label">Cantidad Equipo</label>
+          <input class="cantidadEquipo" type="number" id="cantidadEquipo" name="cantidadEquipo" min="1" max="50" placeholder="Ingresa la cantidad de personal" required/>
+
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <div class="field">
+          <label class="label">Equipos de sonido</label>
+          <div class="check-section">
+            <label for="altavoces" class="checkSonido-label">Altavoces</label>
+            <input type="checkbox" class="checkSonido-input" id="altavoces" name="equiposSonido" value="altavoces" />
+
+            <label for="subwoofer" class="checkSonido-label">Subwoofers</label>
+            <input type="checkbox" class="checkSonido-input" id="subwoofer" name="equiposSonido" value="subwoofer" />
+
+            <label for="amplificador" class="checkSonido-label">Amplificadores</label>
+            <input type="checkbox" class="checkSonido-input" id="amplificador" name="equiposSonido" value="amplificador" />
+
+            <label for="microfono" class="checkSonido-label">Micrófonos</label>
+            <input type="checkbox" class="checkSonido-input" id="microfono" name="equiposSonido" value="microfono" />
+
+            <label for="mesa-de-sonido" class="checkSonido-label">Mesas de sonido</label>
+            <input type="checkbox" class="checkSonido-input" id="mesa-de-sonido" name="equiposSonido" value="mesa-de-sonido" />
+
+            <label for="sistema-de-sonido-portatil" class="checkSonido-label">Sistemas de sonido portátil</label>
+            <input type="checkbox" class="checkSonido-input" id="sistema-de-sonido-portatil" name="equiposSonido" value="sistema-de-sonido-portatil" />
+
+            <label for="sistema-de-sonido-profesional" class="checkSonido-label">Sistemas de sonido profesional</label>
+            <input type="checkbox" class="checkSonido-input" id="sistema-de-sonido-profesional" name="equiposSonido" value="sistema-de-sonido-profesional" />
           </div>
-          <div class="field">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <div class="field">
+          <label for="valorAlquiler" class="label">Valor Alquiler</label>
+          <input type="number" id="valorAlquiler" name="valorAlquiler" min="500000" max="10000000" step="1" placeholder="Ingrese el valor de alquiler aproximado" required />
+        </div>
+
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <div class="field">
+          <label class="label">¿Requiere Decoracion?</label>
+          <div>
+            <label for="requiereDecoracion" class="checkSonido-label">Si</label>
+            <input class="checkSonido-input" type="radio" id="requiereDecoracion" name="requiereDecoracion" value="si" />
+            <label for="requiereDecoracion" class="checkSonido-label">No</label>
+            <input class="checkSonido-input" type="radio" id="requiereDecoracion" name="requiereDecoracion" value="no"/>
           </div>
-          <div class="field">
-              <label for="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" required>
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <div class="field">
+
+          <label class="label">¿Requiere Seguridad?</label>
+
+          <div>
+            <label for="requiereSeguridad" class="checkSonido-label">Si</label>
+            <input class="checkSonido-input" type="radio" id="requiereSeguridad" name="requiereSeguridad" value="si" />
+            <label for="requiereSeguridad" class="checkSonido-label">No</label>
+            <input class="checkSonido-input" type="radio" id="requiereSeguridad" name="requiereSeguridad" value="no"/>
           </div>
-  
-          <div class="field">
-              <label for="staffNumber">Number of Staff:</label>
-              <input type="range" id="staffNumber" name="staffNumber" min="10" max="1000" value="10">
-              <output for="staffNumber" id="staffNumberDisplay">10</output>
+
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <div class="field">
+          <label class="label">¿Requiere Transporte?</label>
+
+          <div>
+            <label for="requiereTransporte" class="checkSonido-label">Si</label>
+            <input class="checkSonido-input" type="radio" id="requiereTransporte" name="requiereTransporte" value="si" />
+            <label for="requiereTransporte" class="checkSonido-label">No</label>
+            <input class="checkSonido-input" type="radio" id="requiereTransporte" name="requiereTransporte" value="no"/>
           </div>
-  
-          <!-- Sound Equipment -->
-          <div class="field">
-              <label for="soundEquipment">Sound Equipment:</label>
-              <select id="soundEquipment" name="soundEquipment">
-                  <option value="none">None</option>
-                  <option value="basic">Basic PA System</option>
-                  <option value="advanced">Concert Grade System</option>
-              </select>
+
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <div class="field">
+          <label class="label">¿Requiere Servicio de Cocina o Bebidas?</label>
+
+          <div>
+            <label for="requiereCocina" class="checkSonido-label">Si</label>
+            <input class="checkSonido-input" type="radio" id="requiereCocina" name="requiereCocina" value="si" />
+            <label for="requiereCocina" class="checkSonido-label">No</label>
+            <input class="checkSonido-input" type="radio" id="requiereCocina" name="requiereCocina" value="no"/>
           </div>
-  
-          <!-- Venue Rental -->
-          <div class="field">
-              <label for="venue">Venue Rental:</label>
-              <input type="text" id="venue" name="venue" placeholder="Specify the location">
-          </div>
-  
-          <!-- Decoration or Setting -->
-          <div class="field checkbox-field">
-              <label for="decorationNeeded">Decoration or Setting Required:</label>
-              <input type="checkbox" id="decorationNeeded" name="decorationNeeded">
-              <textarea id="decorationDetails" name="decorationDetails" placeholder="Describe the decoration details" style="display: none;"></textarea>
-          </div>
-  
-          <!-- Catering -->
-          <div class="field">
-              <label for="cateringDetails">Catering (food and drink):</label>
-              <textarea id="cateringDetails" name="cateringDetails" placeholder="Describe your catering needs"></textarea>
-          </div>
-  
-          <!-- Security -->
-          <div class="field checkbox-field">
-              <label for="securityNeeded">Security Required:</label>
-              <input type="checkbox" id="securityNeeded" name="securityNeeded">
-          </div>
-  
-          <!-- Transportation -->
-          <div class="field">
-              <label for="transportationType">Transportation:</label>
-              <select id="transportationType" name="transportationType">
-                  <option value="none">None</option>
-                  <option value="shuttle">Shuttle Services</option>
-                  <option value="limousine">Limousine</option>
-              </select>
-          </div>
-  
-          <!-- Artists -->
-          <div class="field">
-              <label for="artistsDetails">Artists:</label>
-              <textarea id="artistsDetails" name="artistsDetails" placeholder="Name of the artist and additional information"></textarea>
-          </div>
-  
-          <button type="submit">Submit Quote</button>
+
+          <p class="separador"></p>
+          <p class="separador"></p>
+        </div>
+
+        <button type="submit">Calcular</button>
+
       </form>
-    </section>  
+      <p class="separador"></p>
+      <h1>El costo del evento rondaria en:</h1>
+      <p class="separador"></p>
+    </section>
+    <script>
+      document.querySelector('form').addEventListener('submit', function (e) {
+        const checkboxes = document.querySelectorAll('input[name="equiposSonido"]');
+        const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+  
+        if (!isChecked) {
+          e.preventDefault();
+          alert('Por favor selecciona al menos un equipo de sonido.');
+        }
+      });
+    </script>
   </body>
 </html>
