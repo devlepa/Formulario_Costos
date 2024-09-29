@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Evento</title>
+</head>
+<body>
+    <h1>Eliminar Evento</h1>
+    <input type="text" id="eventIdInput" placeholder="Ingrese el ID del evento">
+    <button id="deleteButton">Eliminar Evento</button>
+
+    <script>
+        const deleteButton = document.getElementById('deleteButton');
+        const eventIdInput = document.getElementById('eventIdInput');
+
+        deleteButton.addEventListener('click', async () => {
+            const eventId = eventIdInput.value;
+
+            if (!eventId) {
+                alert('Por favor, ingrese el ID del evento.');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/eventos/${eventId}`, { method: 'DELETE' });
+
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        alert('Evento no encontrado.');
+                    } else {
+                        alert(`Ocurrió un error inesperado: ${response.statusText}`);
+                        console.error('Error al eliminar evento:', response);
+                    }
+                    return;
+                }
+
+                alert('Evento eliminado correctamente.');
+                eventIdInput.value = '';
+            } catch (error) {
+                console.error('Error al eliminar:', error);
+                alert('Ocurrió un error inesperado. Por favor, revisa la consola para más detalles.');
+            }
+        });
+    </script>
+</body>
+</html>

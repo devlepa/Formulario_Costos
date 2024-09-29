@@ -71,34 +71,7 @@
           <p class="separador"></p>
         </div>
 
-        <div class="field">
-          <label class="label">Equipos de sonido</label>
-          <div class="check-section">
-            <label for="altavoces" class="checkSonido-label">Altavoces</label>
-            <input type="checkbox" class="checkSonido-input" id="altavoces" name="equiposSonido" value="altavoces" />
-
-            <label for="subwoofer" class="checkSonido-label">Subwoofers</label>
-            <input type="checkbox" class="checkSonido-input" id="subwoofer" name="equiposSonido" value="subwoofer" />
-
-            <label for="amplificador" class="checkSonido-label">Amplificadores</label>
-            <input type="checkbox" class="checkSonido-input" id="amplificador" name="equiposSonido" value="amplificador" />
-
-            <label for="microfono" class="checkSonido-label">Micrófonos</label>
-            <input type="checkbox" class="checkSonido-input" id="microfono" name="equiposSonido" value="microfono" />
-
-            <label for="mesa-de-sonido" class="checkSonido-label">Mesas de sonido</label>
-            <input type="checkbox" class="checkSonido-input" id="mesa-de-sonido" name="equiposSonido" value="mesa-de-sonido" />
-
-            <label for="sistema-de-sonido-portatil" class="checkSonido-label">Sistemas de sonido portátil</label>
-            <input type="checkbox" class="checkSonido-input" id="sistema-de-sonido-portatil" name="equiposSonido" value="sistema-de-sonido-portatil" />
-
-            <label for="sistema-de-sonido-profesional" class="checkSonido-label">Sistemas de sonido profesional</label>
-            <input type="checkbox" class="checkSonido-input" id="sistema-de-sonido-profesional" name="equiposSonido" value="sistema-de-sonido-profesional" />
-          </div>
-          <p class="separador"></p>
-          <p class="separador"></p>
-        </div>
-
+        
         <div class="field">
           <label for="valorAlquiler" class="label">Valor Alquiler</label>
           <input type="number" id="valorAlquiler" name="valorAlquiler" min="500000" max="10000000" step="1" placeholder="Ingrese el valor de alquiler aproximado" required />
@@ -166,20 +139,6 @@
         <button type="submit">Calcular</button>
 
       </form>
-      <p class="separador"></p>
-      <h1>El costo del evento rondaria en:</h1>
-      <p class="separador"></p>
     </section>
-    <script>
-      document.querySelector('form').addEventListener('submit', function (e) {
-        const checkboxes = document.querySelectorAll('input[name="equiposSonido"]');
-        const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-  
-        if (!isChecked) {
-          e.preventDefault();
-          alert('Por favor selecciona al menos un equipo de sonido.');
-        }
-      });
-    </script>
   </body>
 </html>
